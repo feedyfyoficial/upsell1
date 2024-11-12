@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kindle- Antecipação </title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            margin-top: 140px; 
+        }
+        .container {
+            text-align: center;
+            background-color: black; 
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            margin-top: -60px;
+        
+        }
+        .logo {
+            position: absolute;
+        }
+        .logo img {
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 7px;
+        }
+        .icon {
+            font-size: 70px;
+            color: #9A02D7;
+        }
+        h1 {
+            font-size: 27px;
+            margin: 20px 0;
+            color: white; 
+        }
+        p {
+            font-size: 17px;
+            color: white; 
+        }
+        .highlight {
+            font-weight: bold;
+            color: white; 
+        }
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 27px;
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            animation: pulse 1s infinite;
+            text-decoration: none; 
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .copyright-bar {
+            background-color: #101010;
+            color: #505050;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 15px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .copyright-bar .line {
+            height: 1px;
+            background-color: #606060;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .copyright-bar p {
+            color: #9A02D7;
+            margin: 5px 0;
+            font-size: 15px;
+        }
+        .antifraude-botao {
+            background-color: white;
+            color: green;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .antifraude-botao i {
+            margin-right: 10px;
+            color: green;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('https://ipinfo.io/json?token=773d9aad663515') 
+                .then(response => response.json())
+                .then(data => {
+                    const city = data.city;
+                    document.getElementById('cidade').innerText = city;
+                })
+                .catch(error => {
+                    console.error('Erro ao obter a localização:', error);
+                });
+        });
+    </script>
+</head>
+<body>
+    <div class="logo">
+        <img src="images/logo-feedfy.webp" alt="Logo">
+    </div>
+    <div class="main-content">
+        <div class="container">
+            <i class="fa-solid fa-exclamation-triangle icon"></i>
+            <h1>ATENÇÃO!</h1>
+            <p><span class="highlight">SAQUE SOLICITADO!<span></span></span><br><br>
+
+                SEU SAQUE SERÁ EFETUADO EM ATÉ<span class="highlight"> 30 DIAS ÚTEIS!</span><br><br>
+                CASO DESEJE ANTECIPAR E<span class="highlight"> RECEBER AGORA </span><br> MESMO EM SUA CONTA, PAGUE A TAXA DE ANTECIPAÇÃO DE <spam class="highlight">R$14,90.</spam> CLIQUE NO BOTÃO ABAIXO</p>
+            <a href="https://go.tribopay.com.br/vhfs0" class="button">ANTECIPAR SAQUE</a>
+        </div>
+    </div>
+    <div class="copyright-bar">
+        <p>Amazon Kindle - Todos Direitos Reservados</p>
+        <button class="antifraude-botao">
+            <i class="fas fa-shield-alt"></i> ANTI FRAUDES
+        </button>
+    </div>
+
+
+</body></html>
